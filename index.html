@@ -1,30 +1,77 @@
-```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Simple Food Ordering</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gnarly Dog Food</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
-<body>
-  <h2>Food Ordering System</h2>
-  <form action="order.py" method="post">
-    <label>Name:</label><br>
-    <input type="text" name="name" required><br><br>
+<body style="background-color: aqua;">
+  <div class="container py-5">
+    <h1 class="text-center">Welcome to Gnarly Dog Food!</h1>
+    <p class="text-center">by The Man who forgot his name • Since 1872</p>
+    <p class="text-center">Business Hours: 7am - 8pm</p>
+    <p class="text-center"><strong>Delivery:</strong> Not Available</p>
+    <hr>
 
-    <label>Address:</label><br>
-    <input type="text" name="address" required><br><br>
+    <h3 class="mb-3">Our Menu</h3>
+    <ul>
+      <li>The Doggy Bone - ₱20</li>
+      <li>The Wagging Tail - ₱24</li>
+      <li>The Dog Collar - ₱40</li>
+      <li>The Pink Water Bowl - ₱36</li>
+      <li>Fluffy Fur - ₱45</li>
+    </ul>
 
-    <label>Contact:</label><br>
-    <input type="text" name="contact" required><br><br>
+    <h4 class="mt-4">Place Your Order</h4>
+    <form class="mt-3" style="background-color: aquamarine;">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Address:</label>
+        <input type="text" class="form-control" id="address" required>
+      </div>
+      <div class="mb-3">
+        <label for="contact" class="form-label">Contact:</label>
+        <input type="text" class="form-control" id="contact" required>
+      </div>
 
-    <p>Select Items:</p>
-    <input type="checkbox" name="item" value="The Doggy Bone"> The Doggy Bone (20)<br>
-    <input type="checkbox" name="item" value="The Wagging Tail"> The Wagging Tail (24)<br>
-    <input type="checkbox" name="item" value="The Dog Collar"> The Dog Collar (40)<br>
-    <input type="checkbox" name="item" value="The Pink Water Bowl"> The Pink Water Bowl (36)<br>
-    <input type="checkbox" name="item" value="Fluffy Fur"> Fluffy Fur (45)<br><br>
+      <h5>Select Items:</h5>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="The Doggy Bone">
+        <label class="form-check-label">The Doggy Bone - ₱20</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="The Wagging Tail">
+        <label class="form-check-label">The Wagging Tail - ₱24</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="The Dog Collar">
+        <label class="form-check-label">The Dog Collar - ₱40</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="The Pink Water Bowl">
+        <label class="form-check-label">The Pink Water Bowl - ₱36</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Fluffy Fur">
+        <label class="form-check-label">Fluffy Fur - ₱45</label>
+      </div>
 
-    <input type="submit" value="Place Order">
-  </form>
+      <button type="button" class="btn btn-danger mt-3" py-click="submit_order()">Submit Order</button>
+    </form>
+
+    <hr>
+    <h4>Order Summary</h4>
+    <div id="order-summary" class="border p-3 bg-white"></div>
+  </div>
+
+  <py-script src="main.py"></py-script>
 </body>
 </html>
-```
